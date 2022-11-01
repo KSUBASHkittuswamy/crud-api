@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- <p style="margin-left:550px;"><a href="{% url 'retrieve' %}">Check data</a></p> -->
+
+<p style="margin-left:550px ;">
+<div class="container">
+    </p>
+    <table>
+        <div class="container mt-3">
+            <!-- <center><h1>Retrieve</h1></center> -->
+            <table class="table table-striped">
+                <tbody>
+                    <form action="{% url 'create' %}" enctype="multipart/form-data" method="POST"
+                        onsubmit="return validate()">
+                        {% csrf_token %}
+                        <tr>
+                            <td> Name</td>
+                            <td><input type="text" name="name" id="name" formcontrol></td>
+                        </tr>
+                        <tr>
+                            <td> Age</td>
+                            <td><input type="text" name="age" id="age"></td>
+                        </tr>
+                        <tr>
+                            <td> Address</td>
+                            <td><input type="text" name='address' id="address"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>gender:</label><br>
+
+                                <input type="radio" id="radioMale" name="gender" value="male">
+                                <label for="male">Male</label><br>
+                                <input type="radio" id="radioFemale" name="gender" value="female">
+                                <label for="female">Female</label><br>
+                            </td>
+                        <tr>
+                            <td>
+                                <label for="degree">degree:</label>
+                                <select name="degree" id="degree">
+                                    <option value="0">Select</option>
+                                    <option value="bsc">bsc</option>
+                                    <option value="bcom">bcom</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="date_field">date:</label>
+                                <input type="date" id="txtdate" name="txtdate">
+                            </td>
+                        </tr>
+                        <!-- <tr> -->
+                            <!-- <td> -->
+                                <!-- <input type="file" name="image_name"> -->
+                            <!-- </td> -->
+                        <!-- </tr> -->
+                        </tr>
+                        <tr>
+
+                        </tr>
+                        <tr>
+                            <td><button>Submit</button></td>
+                        </tr>
+                    </form>
+                </tbody>
+            </table>
+        </div>
+    </table>
+
+
+    {% endblock %}

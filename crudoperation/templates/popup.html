@@ -1,0 +1,61 @@
+{% load static %}
+{% block content %}
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="wrapper">
+                    <div class="inner">
+                        <form action="" method="post" id="form1" enctype="multipart/form-data">
+                            <div class="col-md-6 text-right">
+                            </div>
+                            {% csrf_token %}
+                            <div class="form-wrapper">
+                                <label for="name" class="label-input">Name</label>
+                                <input type="text" name="name" id="name" class="form-control">
+                            </div>
+                            <div class="form-wrapper">
+                                <label for="age" class="label-input">Age</label>
+                                <input type="text" name="age" id="age" class="form-control">
+                            </div>
+                            <div class="form-wrapper">
+                                <label for="Address" class="label-input">address</label>
+                                <input type="text" name="Address" id="Address" class="form-control">
+                            </div>
+                            <div class="form-wrapper">
+                                <label for="degree" class="label-comment">degree</label>
+                                <select name="degree" id="degree">
+                                    <option>Select</option>
+                                    <option value="bsc">bsc</option>
+                                    <option value="bcom">bcom</option>
+                                </select>
+                            </div>
+
+                            <div class="form-wrapper">
+                                <p>Please select your gender:</p>
+                                <input type="radio" name="gender" id="male" value="male">
+                                <label for="male">Male</label><br>
+                                <input type="radio" name="gender" id="female" value="female">
+                                <label for="female">Female</label><br>
+                            </div>
+
+                            <div class="form-wrapper">
+                                <label for="date_field" class="label-input">Date</label>
+                                <input type="date" name="txtdate" id="txtdate" class="form-control">
+                            </div>
+                            <!-- <div class="form-wrapper"> -->
+                            <!-- <label for="img">Select image:</label> -->
+                            <!-- <input type="file" name="img" accept="image/*"> -->
+                            <!-- </div> -->
+                            <button>UPDATE</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

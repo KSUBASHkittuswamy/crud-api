@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<p style="margin-left:550px;"><a href="{% url 'retrieve' %}">Check data</a></p>
+<table>
+    <div class="container mt-3">
+        <table class="table table-striped">
+            <tbody>
+                <form action="/update/{{i.id}}" method="POST">
+                    {% csrf_token %}
+                    <tr>
+                        <td> Name</td>
+                        <td><input type="text" name="name" id="name"></td>
+                    </tr>
+                    <tr>
+                        <td> Age</td>
+                        <td><input type="text" name="age" id="age"></td>
+                    </tr>
+                    <tr>
+                        <td> Address</td>
+                        <td><input type="text" name="address" id=address></td>
+
+                    </tr>
+                    <tr>
+                        <td> Gender</td>
+                        <td>
+                            <input type="radio" id="gender" name="gender">
+                            <label for="male">Male</label><br>
+                            <input type="radio" id="gender" name="gender">
+                            <label for="female">female</label><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Degree</td>
+                        <td>
+                            <select name="degree" id="degree">
+                                <option value="bsc">bsc</option>
+                                <option value="bcom">bcom</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="date">date:</label>
+                            <input type="date" id="txtdate" name="txtdate">
+                        </td>
+                    </tr>
+                    <!-- <tr> -->
+                        <!-- <td> -->
+                            <!-- <input type="file" name="image_name" id="image_user"> -->
+                        <!-- </td> -->
+                    <!-- </tr> -->
+                    <tr>
+                        <td><button>Submit</button></td>
+                    </tr>
+                </form>
+            </tbody>
+        </table>
+    </div>
+</table>
+
+{% endblock %}
